@@ -13,3 +13,6 @@ app.include_router(jobs.router)
 @app.get("/")
 def root():
     return {"message": "API is running 🚀"}
+import os
+
+port = int(os.environ.get("PORT", 8000))
