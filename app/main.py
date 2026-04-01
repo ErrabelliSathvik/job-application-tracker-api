@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
-app = FastAPI()
+app = FastAPI(title="Job Tracker API")
 
 @app.get("/")
 def root():
-    return {"message": "Railway working 🚀"}
+    return {"message": "API running 🚀"}
