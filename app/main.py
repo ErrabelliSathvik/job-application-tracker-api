@@ -1,15 +1,11 @@
 from fastapi import FastAPI
+import os
 
-app = FastAPI(title="Job Tracker API")
+print("🚀 APP STARTING...")
+print("PORT ENV:", os.getenv("PORT"))
 
-try:
-    from app.routers import auth, jobs
-    app.include_router(auth.router)
-    app.include_router(jobs.router)
-    print("✅ Routers loaded")
-except Exception as e:
-    print("❌ Router error:", e)
+app = FastAPI()
 
 @app.get("/")
 def root():
-    return {"message": "API running 🚀"}
+    return {"status": "ok"}
