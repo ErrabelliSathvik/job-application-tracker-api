@@ -6,8 +6,9 @@ try:
     from app.routers import auth, jobs
     app.include_router(auth.router)
     app.include_router(jobs.router)
+    print("✅ Routers loaded")
 except Exception as e:
-    print("IMPORT ERROR:", e)
+    print("❌ Router error:", e)
 
 @app.get("/")
 def root():
