@@ -35,11 +35,12 @@ This system provides:
 
 ---
 
-### 📊 Analytics (Key Differentiator)
+### 📊 Analytics & Insights
 
 * Total applications per user
 * Success rate tracking
-* Application trends
+* Average response time
+* Most applied companies
 
 👉 Moves beyond CRUD → provides **decision-making insights**
 
@@ -49,7 +50,7 @@ This system provides:
 
 * Modular architecture (routers, schemas, models)
 * Clean separation of concerns
-* Scalable structure for future microservices
+* Scalable structure for future extensions
 
 ---
 
@@ -58,7 +59,7 @@ This system provides:
 * **Backend:** FastAPI
 * **Database:** SQLite (easily extensible to PostgreSQL)
 * **ORM:** SQLAlchemy
-* **Authentication:** JWT
+* **Authentication:** JWT (python-jose)
 * **Migrations:** Alembic
 * **Validation:** Pydantic
 
@@ -126,6 +127,50 @@ job-tracker-api/
 
 ---
 
+## 📊 Analytics Endpoint (Key Feature)
+
+### Get Application Insights
+
+```http
+GET /analytics
+Authorization: Bearer <token>
+```
+
+### Sample Response
+
+```json
+{
+  "total_applications": 42,
+  "success_rate": 18.5,
+  "avg_response_days": 5,
+  "top_companies": ["Amazon", "TCS"]
+}
+```
+
+### What it provides
+
+* 📈 Total applications tracked per user
+* 🎯 Success rate based on offers/interviews
+* ⏱️ Average response time from companies
+* 🏢 Most frequently applied companies
+
+👉 Enables users to **analyze and improve their job search strategy**
+
+---
+
+## 🌐 Live API
+
+Base URL:
+https://your-api.onrender.com
+
+Swagger Docs:
+https://your-api.onrender.com/docs
+
+👉 Fully deployed backend with interactive API documentation
+
+
+---
+
 ## 🧪 Sample API Usage
 
 ### Login
@@ -166,9 +211,9 @@ http://127.0.0.1:8000/docs
 
 ## 🚀 Future Improvements
 
-* PostgreSQL + indexing
-* Redis caching
-* Email automation (job tracking)
+* PostgreSQL with indexing
+* Redis caching for performance
+* Email automation for tracking applications
 * AI-based job matching
 * Frontend dashboard integration
 
@@ -186,4 +231,4 @@ http://127.0.0.1:8000/docs
 
 ## 👤 Author
 
-***ERRABELLI SATHVIK***
+**Sathvik Errabelli**
